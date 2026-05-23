@@ -1,0 +1,2 @@
+curl -X POST http://localhost:3000/infer \
+  -F "image=@./teste.jpg"

@@ -1,0 +1,17 @@
+{
+  "name": "cnn-node-api-biomas",
+  "version": "1.0.0",
+  "description": "API node.js para inferencia de modelo CNN",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.2.1",
+    "multer": "^2.1.1"
+  }
+}
