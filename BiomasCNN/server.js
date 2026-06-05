@@ -31,7 +31,7 @@ import sys
 
 class CNN(nn.Module):
 
-    def __init__(self, num_classes=3):
+    def __init__(self, num_classes=7):
         super().__init__()
 
         self.feature_extractor = nn.Sequential(
@@ -198,7 +198,7 @@ def predict_image(
             f"_sem_nome_no_checkpoint"
         )
 
-    top_k = min(3, probabilities.shape[0])
+    top_k = probabilities.shape[0]
 
     top_values, top_indices = torch.topk(
         probabilities,
@@ -254,6 +254,9 @@ def main():
             device,
             transform
         ) = load_model(args.model)
+
+        print("CLASSES:", classes, flush=True)
+        print("TOTAL:", len(classes), flush=True)   
 
         print_json({
             "status": "ready",
@@ -502,6 +505,12 @@ async function bootstrap() {
     }
 
     const app = express();
+
+    app.use(
+    express.static(
+        path.join(__dirname, "public")
+        )
+    );
 
     app.post("/infer", upload.single("image"), async (req, res) => {
         if (!req.file) {

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biomas CNN</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Classificador de Biomas</h1>
+
+    <div class="left-panel">
+
+        <input
+            type="file"
+            id="imageInput"
+            accept="image/*"
+        >
+
+        <img
+            id="preview"
+            alt="Preview"
+        >
+
+        <button id="analyzeButton">
+            Analisar Imagem
+        </button>
+
+    </div>
+
+    <div class="right-panel">
+
+        <div id="mainResult"></div>
+
+        <div id="predictions"></div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
